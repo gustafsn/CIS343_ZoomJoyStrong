@@ -1,7 +1,7 @@
-%[
-    #include std.io
+%{
+    #include <stdio.h>
     void printLexeme();
-%]
+%}
 
 %%
 
@@ -25,5 +25,5 @@ void printLexeme(){
 
 int main(int argc, char** argv){
     yylex();    //start lexing
-    return0;
+    return 0;
 }
