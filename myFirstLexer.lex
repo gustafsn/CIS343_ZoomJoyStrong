@@ -15,7 +15,7 @@ SET_COLOR       { printf("SET_COLOR\t"); printLexeme();}
 INT             { printf("INT\t"); printLexeme();}
 FLOAT           { printf("FLOAT\t"); printLexeme();}
 
-\T| |\n|        ;
+\T|[ ]|\n        ;
 .               { printf("you MESSED UP!\t"); printLexeme();}
 
 %%
