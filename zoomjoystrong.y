@@ -18,7 +18,7 @@
 
 %%
 
-program:	list_of_statements END
+program:	list_of_statements END END_STATEMENT
 	;
 
 list_of_statements:	
@@ -42,7 +42,7 @@ statement:
 	|	SET_COLOR INT INT INT END_STATEMENT{
 			set_color($2, $3, $4);
 		}
-	|	END{
+	|	END END_STATEMENT{
 			finish();
 		}
 	;
