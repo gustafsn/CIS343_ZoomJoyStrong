@@ -42,9 +42,9 @@ statement:
 	|	SET_COLOR INT INT INT END_STATEMENT{
 			set_color($2, $3, $4);
 		}
-	|	END END_STATEMENT{
-			finish();
-		}
+	|	END END_STATEMENT
+			//finish();
+		
 	;
 
 %%
@@ -54,6 +54,7 @@ int lineNum = 1;
 int main(int argc, char** argv){
 	setup();	
 	yyparse();
+	finish();
 	
 }
 

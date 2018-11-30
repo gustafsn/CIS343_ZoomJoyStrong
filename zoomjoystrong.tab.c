@@ -1257,16 +1257,8 @@ yyreduce:
 #line 1258 "zoomjoystrong.tab.c" /* yacc.c:1648  */
     break;
 
-  case 10:
-#line 45 "zoomjoystrong.y" /* yacc.c:1648  */
-    {
-			finish();
-		}
-#line 1266 "zoomjoystrong.tab.c" /* yacc.c:1648  */
-    break;
 
-
-#line 1270 "zoomjoystrong.tab.c" /* yacc.c:1648  */
+#line 1262 "zoomjoystrong.tab.c" /* yacc.c:1648  */
       default: break;
     }
   /* User semantic actions sometimes alter yychar, and that requires
@@ -1502,6 +1494,7 @@ int lineNum = 1;
 int main(int argc, char** argv){
 	setup();	
 	yyparse();
+	finish();
 	
 }
 
