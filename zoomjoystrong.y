@@ -5,7 +5,10 @@
 	int yyerror(const char* err);
 	
 %}
-
+///*error handling code found from
+//https://www.gnu.org/software/bison/manual/html_node/Error-Reporting.html
+//*/
+%define parse.error verbose
 %token END
 %token END_STATEMENT
 %token POINT
@@ -27,7 +30,9 @@ list_of_statements:
 	;
 
 statement:
-		LINE INT INT INT INT END_STATEMENT{
+		
+		error	
+	|	LINE INT INT INT INT END_STATEMENT{
 			/*draws a line from (x,y) to (u,v)*/
 			if($2>=0 && $2<=WIDTH &&
 			   $4>=0 && $4<=WIDTH &&
