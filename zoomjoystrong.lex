@@ -8,10 +8,10 @@
 
 %%
 
-end		{return END;}
+end		return END;
 ;		return END_STATEMENT;
 point		return POINT;
-line		{return LINE;}
+line		return LINE;
 circle		return CIRCLE;
 rectangle	return RECTANGLE;
 set_color	return SET_COLOR;
@@ -19,9 +19,14 @@ set_color	return SET_COLOR;
 		yylval = atoi(yytext); 
 		return INT;
 		}
-[0-9.]+		{return FLOAT;}
+[0-9.]+		{
+		yylval = atof(yytext);
+		return FLOAT;
+		}
 \n		{lineNum++;}
 [ |\t]	        ;
-.               { printf("you MESSED UP!\t");}
+.               { 
+			printf("*INVALID!*\n");
+		}
 
 %%
