@@ -751,7 +751,7 @@ do_action:	/* This label is used only to access EOF actions. */
 case 1:
 YY_RULE_SETUP
 #line 11 "zoomjoystrong.lex"
-{return END;}
+return END;
 	YY_BREAK
 case 2:
 YY_RULE_SETUP
@@ -766,7 +766,7 @@ return POINT;
 case 4:
 YY_RULE_SETUP
 #line 14 "zoomjoystrong.lex"
-{return LINE;}
+return LINE;
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
@@ -794,30 +794,35 @@ YY_RULE_SETUP
 case 9:
 YY_RULE_SETUP
 #line 22 "zoomjoystrong.lex"
-{return FLOAT;}
+{
+		yylval = atof(yytext);
+		return FLOAT;
+		}
 	YY_BREAK
 case 10:
 /* rule 10 can match eol */
 YY_RULE_SETUP
-#line 23 "zoomjoystrong.lex"
+#line 26 "zoomjoystrong.lex"
 {lineNum++;}
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 24 "zoomjoystrong.lex"
+#line 27 "zoomjoystrong.lex"
 ;
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 25 "zoomjoystrong.lex"
-{ printf("you MESSED UP!\t");}
+#line 28 "zoomjoystrong.lex"
+{ 
+			printf("*INVALID!*\n");
+		}
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 27 "zoomjoystrong.lex"
+#line 32 "zoomjoystrong.lex"
 ECHO;
 	YY_BREAK
-#line 820 "lex.yy.c"
+#line 825 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1822,6 +1827,6 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 27 "zoomjoystrong.lex"
+#line 32 "zoomjoystrong.lex"
 
 
