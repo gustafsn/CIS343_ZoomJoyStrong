@@ -68,9 +68,10 @@
 	#include "zoomjoystrong.h"
 	#define YYSTYPE int
 	int yyerror(const char* err);
+	int yylex();
 	
 
-#line 74 "zoomjoystrong.tab.c" /* yacc.c:339  */
+#line 75 "zoomjoystrong.tab.c" /* yacc.c:339  */
 
 # ifndef YY_NULLPTR
 #  if defined __cplusplus && 201103L <= __cplusplus
@@ -133,7 +134,7 @@ int yyparse (void);
 
 /* Copy the second part of user declarations.  */
 
-#line 137 "zoomjoystrong.tab.c" /* yacc.c:358  */
+#line 138 "zoomjoystrong.tab.c" /* yacc.c:358  */
 
 #ifdef short
 # undef short
@@ -431,8 +432,8 @@ static const yytype_uint8 yytranslate[] =
   /* YYRLINE[YYN] -- Source line where rule number YYN was defined.  */
 static const yytype_uint8 yyrline[] =
 {
-       0,    24,    24,    29,    37,    38,    42,    46,    47,    59,
-      69,    82,    95,   108
+       0,    25,    25,    30,    38,    39,    43,    47,    48,    60,
+      70,    83,    96,   109
 };
 #endif
 
@@ -1216,27 +1217,27 @@ yyreduce:
   switch (yyn)
     {
         case 2:
-#line 24 "zoomjoystrong.y" /* yacc.c:1648  */
+#line 25 "zoomjoystrong.y" /* yacc.c:1648  */
     {
 			printf("done drawing...\n");			
 			YYACCEPT; /*idea to use YYACCEPT from Chris Dodd @ https://stackoverflow.com/questions/11564563/how-do-i-convince-bison-to-parse-part-of-a-file*/
 			
 		}
-#line 1226 "zoomjoystrong.tab.c" /* yacc.c:1648  */
+#line 1227 "zoomjoystrong.tab.c" /* yacc.c:1648  */
     break;
 
   case 3:
-#line 29 "zoomjoystrong.y" /* yacc.c:1648  */
+#line 30 "zoomjoystrong.y" /* yacc.c:1648  */
     {
 			printf("done drawing...\n");			
 			YYACCEPT;
 			
 		}
-#line 1236 "zoomjoystrong.tab.c" /* yacc.c:1648  */
+#line 1237 "zoomjoystrong.tab.c" /* yacc.c:1648  */
     break;
 
   case 8:
-#line 47 "zoomjoystrong.y" /* yacc.c:1648  */
+#line 48 "zoomjoystrong.y" /* yacc.c:1648  */
     {
 			/*draws a line from (x,y) to (u,v)*/
 			if((yyvsp[-3])>=0 && (yyvsp[-3])<=WIDTH &&
@@ -1249,11 +1250,11 @@ yyreduce:
 				printf("INPUT ERROR: line x y u v -- 0<=x,u<=%d and 0<=y,v<=%d\n", WIDTH, HEIGHT);
 			}
 		}
-#line 1253 "zoomjoystrong.tab.c" /* yacc.c:1648  */
+#line 1254 "zoomjoystrong.tab.c" /* yacc.c:1648  */
     break;
 
   case 9:
-#line 59 "zoomjoystrong.y" /* yacc.c:1648  */
+#line 60 "zoomjoystrong.y" /* yacc.c:1648  */
     {
 			/*draws a point at (x,y)*/
 			if((yyvsp[-1])>=0 && (yyvsp[-1])<=WIDTH &&
@@ -1264,11 +1265,11 @@ yyreduce:
 				printf("INPUT ERROR: point x y -- 0<=x<=%d and 0<=y<=%d\n", WIDTH, HEIGHT);
 			}
 		}
-#line 1268 "zoomjoystrong.tab.c" /* yacc.c:1648  */
+#line 1269 "zoomjoystrong.tab.c" /* yacc.c:1648  */
     break;
 
   case 10:
-#line 69 "zoomjoystrong.y" /* yacc.c:1648  */
+#line 70 "zoomjoystrong.y" /* yacc.c:1648  */
     {
 			/*draws circle at (x,y) with radius r*/
 			if((yyvsp[-2])>=0 && (yyvsp[-2])<=WIDTH &&
@@ -1282,11 +1283,11 @@ yyreduce:
 				printf("INPUT ERROR: circle x y r -- 0<=x<=%d and 0<=y<=%d, r is pos., -+r and xy must stay within bounds as well\n", WIDTH, HEIGHT);
 			}
 		}
-#line 1286 "zoomjoystrong.tab.c" /* yacc.c:1648  */
+#line 1287 "zoomjoystrong.tab.c" /* yacc.c:1648  */
     break;
 
   case 11:
-#line 82 "zoomjoystrong.y" /* yacc.c:1648  */
+#line 83 "zoomjoystrong.y" /* yacc.c:1648  */
     {
 			
 			/*draws rectangle (x,y) from top left with height h and width w*/
@@ -1300,11 +1301,11 @@ yyreduce:
 				printf("INPUT ERROR: circle x y w h -- 0<=x<=%d and 0<=y<=%d, w&h are pos., (x+w) and (y+h) must stay within bounds as well\n", WIDTH, HEIGHT);
 			}
 		}
-#line 1304 "zoomjoystrong.tab.c" /* yacc.c:1648  */
+#line 1305 "zoomjoystrong.tab.c" /* yacc.c:1648  */
     break;
 
   case 12:
-#line 95 "zoomjoystrong.y" /* yacc.c:1648  */
+#line 96 "zoomjoystrong.y" /* yacc.c:1648  */
     {
 			/*changes the current drawing color to the r,g,b tuple*/
 			if((yyvsp[-2])>=0 && (yyvsp[-2])<=255 &&
@@ -1316,11 +1317,11 @@ yyreduce:
 				printf("INPUT ERROR: set_color r g b -- 0<=r,j,g<=255\n");
 			}
 		}
-#line 1320 "zoomjoystrong.tab.c" /* yacc.c:1648  */
+#line 1321 "zoomjoystrong.tab.c" /* yacc.c:1648  */
     break;
 
 
-#line 1324 "zoomjoystrong.tab.c" /* yacc.c:1648  */
+#line 1325 "zoomjoystrong.tab.c" /* yacc.c:1648  */
       default: break;
     }
   /* User semantic actions sometimes alter yychar, and that requires
@@ -1548,7 +1549,7 @@ yyreturn:
 #endif
   return yyresult;
 }
-#line 111 "zoomjoystrong.y" /* yacc.c:1907  */
+#line 112 "zoomjoystrong.y" /* yacc.c:1907  */
 
 int yylval;
 int lineNum = 1;

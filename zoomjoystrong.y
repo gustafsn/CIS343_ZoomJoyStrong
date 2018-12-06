@@ -3,6 +3,7 @@
 	#include "zoomjoystrong.h"
 	#define YYSTYPE int
 	int yyerror(const char* err);
+	int yylex();
 	
 %}
 //error handling code found from
